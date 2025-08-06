@@ -1,0 +1,68 @@
+####
+####
+####
+#How to use: "Configuration.yaml" file must be present in this directory. Either change the name of this file or create a copy and fill out the correct parameters
+#####
+#####
+#####
+
+
+runConfig:
+  #modify based on your operating system############################
+  operatingSystem: windows
+#  operatingSystem: mac
+
+  #modify if you want to use testrails with it, just leave this as False######################
+#  useTestrail: True
+  useTestrail: False
+
+
+  curBuild:     #enter long version of build number
+
+
+
+  planId:       #used for testrail automation, can ignore
+
+
+  #modify based on how python is called on your device###################
+  pythonVersion: python
+#  pythonVersion: python3
+
+
+#uncomment the curDevice you want to use###########################
+  curDevice: basicTestrun
+#  curDevice: Pismo P1.1 HMD
+#  curDevice: Pismo Dev 1 Board
+#  curDevice: Pismo P1 HMD
+#  curDevice: Testing
+
+
+
+#modify for your bluetooth version. To find below commands in separate terminals:
+# adb logcat | grep "BT discovery: Device: "
+# adb shell am broadcast -a com.oculus.vrbtcontrol.EVENT -n com.oculus.vrbtcontrol/.VrBtControlBroadcastReceiver --es cmd_type ""DISCOVER""
+bluetoothDevice:  # Have this device ready
+
+######################################## can ignore if not using maui skoobe test cases
+mauiSkoobe:
+  usePersonalSO: False
+  username:
+  password:
+  networkName:
+  networkPassword:
+
+######################################
+wifiSanity: #public network to test wifi sanity (must be reliable connection)
+  networkName:
+  password:
+######################################
+wifiCast: #wifi network of mobile hotspot (something you are able to successfully ping to)
+  networkName:
+  password:
+  ipPing:  #connect your computer to the network, and look up how to find ip address
+
+#########################################################if not using testrail api, ignore
+testrail:
+  user:
+  apiKey:
+
